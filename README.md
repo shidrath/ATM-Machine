@@ -1,2 +1,2 @@
 # ATM-Machine
-Created an interface of an ATM Machine using Java
+Created a user interface of an ATM Machine using Java
