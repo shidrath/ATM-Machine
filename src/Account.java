@@ -52,7 +52,7 @@ public class Account {
 		if(balance >=0) {
 			return String.format("%s: $%.02f: %s", this.uuid, balance, this.name);
 		}else {
-			return String.format("%s : $(%.02f) : %s", this.uuid,balance,this.name);
+			return String.format("%s: $(%.02f): %s", this.uuid, Math.abs(balance), this.name);
 		}
 	}
 	/**
@@ -75,7 +75,7 @@ public class Account {
 		
 		System.out.printf("\nTransaction history for account %s \n", this.uuid);
 		for( int t= this.transactions.size()-1; t>=0; t--) {
-			System.out.printf(this.transactions.get(t).getSummaryLine());
+			System.out.println(this.transactions.get(t).getSummaryLine());
 		}
 		System.out.println();
 	}
