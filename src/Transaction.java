@@ -57,7 +57,7 @@ public class Transaction {
 		if(this.amount >=0) {
 			return String.format("%s: $%.02f : %s", this.timestampDate.toString(), this.amount, this.memo);
 		}else {
-			return String.format("%s: $(%.02f) : %s", this.timestampDate.toString(), this.amount, this.memo);
+			return String.format("%s: $(%.02f) : %s", this.timestampDate.toString(), Math.abs(this.amount), this.memo);
 		}
 	}
 	

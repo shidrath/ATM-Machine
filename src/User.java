@@ -29,7 +29,7 @@ public class User {
 		// store the pin's MD5 hash, rather than the original value, for
 		// security reasons
 		try {
-			MessageDigest md = MessageDigest.getInstance("MD5");
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
 			this.pinHash = md.digest(pin.getBytes());
 		} catch (NoSuchAlgorithmException e) {
 			// TODO print out an error
@@ -76,7 +76,7 @@ public class User {
 	public boolean validatePin(String aPin) {
 
 		try {
-			MessageDigest mDigest = MessageDigest.getInstance("MD5");
+			MessageDigest mDigest = MessageDigest.getInstance("SHA-256");
 			return MessageDigest.isEqual(mDigest.digest(aPin.getBytes()), this.pinHash);
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
